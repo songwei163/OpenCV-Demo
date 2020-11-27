@@ -70,7 +70,7 @@ int main()
 	// }
 	
 	imshow("原图像", img);
-	imshow("转为蓝色图像", dst);
+	imshow("加雪花效果", dst);
 	// imshow("减色效果", out);
 
 	if(27==waitKey(0))
