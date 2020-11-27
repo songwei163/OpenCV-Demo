@@ -29,7 +29,7 @@ int main()
 
 	Mat dst;
 	merge(channels, dst);
-
+	
 	imshow("dst", dst);
 	waitKey(0);
 	return 0;
