@@ -25,25 +25,33 @@ int main()
 	// dst = imgTranslate2(img, 100, 100);
 	// imshow("dst", dst);
 
-	/*transpose(img, dst);
-	flip(dst, dst, 0);*/
+	// transpose(img, dst);	// 转置
+	flip(img, dst, 1);	// 镜像
 
-	int rows = img.rows;
-	int cols = img.cols;
-
-	Mat xMapImg = Mat::zeros(img.size(), CV_32FC1);  //map1
-	Mat yMapImg = Mat::zeros(img.size(), CV_32FC1);  //map2
-
-	for (int i = 0; i < rows; i++)
-	{
-		for (int j = 0; j < cols; j++)
-		{
-			xMapImg.at<float>(i, j) = j;  //保持列不变
-			//yMapImg.at<float>(i, j) = i + 5 * sin(j/10.0);
-			yMapImg.at<float>(i, j) = rows - i;
-		}
-	}
-	remap(img, dst, xMapImg, yMapImg, CV_INTER_LINEAR);
+	// 图像旋转
+	// Point2f center = Point2f(img.cols / 2, img.rows / 2);
+	// double angle = 30;
+	// double scale = 0.5;
+	// Mat roateM = getRotationMatrix2D(center, angle, scale);
+	// warpAffine(img, dst, roateM, Size(1000, 800));
+	
+	
+	// int rows = img.rows;
+	// int cols = img.cols;
+	//
+	// Mat xMapImg = Mat::zeros(img.size(), CV_32FC1);  //map1
+	// Mat yMapImg = Mat::zeros(img.size(), CV_32FC1);  //map2
+	//
+	// for (int i = 0; i < rows; i++)
+	// {
+	// 	for (int j = 0; j < cols; j++)
+	// 	{
+	// 		xMapImg.at<float>(i, j) = j;  //保持列不变
+	// 		//yMapImg.at<float>(i, j) = i + 5 * sin(j/10.0);
+	// 		yMapImg.at<float>(i, j) = rows - i;
+	// 	}
+	// }
+	// remap(img, dst, xMapImg, yMapImg, CV_INTER_LINEAR);
 
 	imshow("img", img);
 	imshow("dst", dst);
