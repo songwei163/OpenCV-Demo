@@ -67,7 +67,7 @@ int main()
 	// 			break;
 	// 		}
 	// 	}
-	// }
+	// } 
 	
 	imshow("原图像", img);
 	imshow("加雪花效果", dst);
